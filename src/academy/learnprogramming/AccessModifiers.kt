@@ -19,8 +19,16 @@ fun main(args: Array<String>) {
     println(Demo().dummy)
 }
 
-class Employee(val firstName: String, var fullTime: Boolean = true) {
-
+class Employee(val firstName: String,  fullTime: Boolean = true) {
+ var fullTime=fullTime
+    get() {
+        println("Running the custom get")
+        return field
+    }
+    set(value) {
+        println("Running the custom set")
+        field = value
+    }
 }
 
 class Demo{
